@@ -1,0 +1,46 @@
+*{
+	margin: 0;
+	padding: 0;
+	background: url(/img/backgroundIndex.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+body {
+	max-width: 1080px;
+}
+
+.signup{
+    position: absolute;
+    width: 15%;
+    height: 1%;
+    left: 50%;
+    top: 82%;
+}
+
+.signin{
+    position: absolute;
+    width: 15%;
+    height: 1%;
+    left: 20%;
+    top: 82%;
+    
+}
+
+
+.password{
+	position: absolute;
+	width: 25%;
+	left: 38%;
+	top: 73%;
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: 800;
+	font-size: 30px;
+	line-height: 49px;
+	color: #FFFFFF;
+
+
+}

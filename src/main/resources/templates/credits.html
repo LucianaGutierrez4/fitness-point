@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/css/credits.css" />
+	<title>Créditos</title>
+</head>
+
+
+<script src="/js/credits.js"> </script>
+<div id="imgFondo">
+	<header>
+		<img src="/img/logo.png" class="imgHeader" />
+		<div>Créditos disponibles</div>
+		<div class="creditos">
+			<p th:text="${session.credits[0]}"></p>
+		</div>
+		<div>Créditos usados</div>
+		<div class="creditos">
+			<p th:text="${session.credits[1]}"></p>
+		</div>
+		<div>
+			<p th:text="${session.uSession.email}" class="username"></p>
+		</div>
+	</header>
+
+	<div class="container">
+		<aside class="izquierdo">
+			<h1>CRÉDITOS</h1>
+			<form action="/user/confirmation" style="width: 30vw">
+				<div class="txt">
+					Selecciona el número de <br />
+					créditos que deseas comprar
+				</div>
+				<div class="bodySlider">
+					<div style="display: flex; align-items: center; text-align: center">
+						<input id="rangeLine" class="range" type="range" value="10" min="1" max="20"
+							onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)" name="credits" />
+						<span id="rangeValue">10</span>
+					</div>
+				</div>
+				<div class="txt">
+					<br />
+					Recuerda que
+					<strong>un crédito equivale <br />a una sola clase</strong> en
+					nuestro gimnasio.
+				</div>
+
+				<div class="txt">
+					<br />
+					Puedes usarlo cuando quieras,<br />
+					pero recuerda que si al finalizar el mes <br />no los has usado,
+					los créditos comprados se pierden
+
+					<button type="submit">Comprar</button>
+			</form>
+
+	</div>
+	</aside>
+
+	<aside class="derecho">
+		<div style="padding-top: 15vh">
+			<img src="/img/icon2.svg" alt="" />
+			<a th:href="@{/user/home}">Home</a>
+		</div>
+		<div>
+			<img src="/img/icon3.svg" alt="" />
+			<a th:href="@{/user/credits}">Créditos</a>
+		</div>
+		<div>
+			<img src="/img/icon1.svg" alt="" />
+			<a th:href="@{/user/calendar}">Calendario</a>
+		</div>
+		<div>
+			<img src="/img/icon6.svg" alt="" />
+			<a th:href="@{/user/myReservations}">Mis Reservas</a>
+		</div>
+		<div style="padding-top: 20%">
+			<img src="/img/icon5.svg" alt="" />
+			<a th:href="@{/user/modification}">Ajustes</a>
+		</div>
+		<div>
+			<img src="/img/icon4.svg" alt="" />
+			<a href="/logout">Salir</a>
+		</div>
+	</aside>
+</div>
+</div>
+</body>
+
+</html>

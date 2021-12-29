@@ -1,0 +1,105 @@
+* {
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  color: white;
+}
+header {
+  position: absolute;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  background-color: rgba(39, 39, 39, 0.952);
+  z-index: 1;
+  box-shadow: rgb(0, 0, 0) 2vw 0 40px;
+  font-size: 2.5vh;
+}
+.creditos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0px 2vw;
+  background-color: rgba(39, 39, 39, 0.952);
+  box-shadow: rgb(0, 0, 0) 0 0 10px;
+}
+
+.username {
+	margin-left: 200%;
+}
+
+.imgHeader {
+  width: 10%;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  height: 100vh;
+}
+.izquierdo {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.219);
+  margin-top: 10vh;
+}
+.derecho {
+  box-shadow: rgb(0, 0, 0) 0 0 10px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 20vw;
+  background-color: rgba(0, 0, 0, 0.527);
+}
+.derecho div {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 2vh 2vw;
+}
+#imgFondo {
+  background-image: url(https://images.unsplash.com/photo-1598136490929-292a0a7890c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80);
+  width: 100vw;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-width: 40px;
+}
+a {
+  color: inherit;
+  position: relative;
+  text-decoration: none;
+  font-size: 2vh;
+  cursor: pointer;
+}
+a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2vh;
+  background: white;
+  filter: blur(3vh);
+  z-index: 1;
+  transform: scaleX(0);
+}
+a:hover::before {
+  transform: scaleX(1);
+}
+
+div img {
+  width: 5vh;
+  align-self: center;
+  margin: 0 3vw 0 2vw;
+}

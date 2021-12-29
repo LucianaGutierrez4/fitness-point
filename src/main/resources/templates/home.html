@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/css/home.css" />
+	<title>Home</title>
+</head>
+
+<body>
+	<div id="imgFondo">
+		<header>
+			<img src="/img/logo.png" class="imgHeader" />
+			<div>Créditos disponibles</div>
+			<div class="creditos">
+				<p th:text="${session.credits[0]}"></p>
+			</div>
+			<div>Créditos usados</div>
+			<div class="creditos">
+				<p th:text="${session.credits[1]}"></p>
+			</div>
+			<div>
+				<p th:text="${session.uSession.email}" class="username"></p>
+			</div>
+		</header>
+
+		<div class="container">
+			<aside class="izquierdo">
+				<div style="
+              align-self: flex-end;
+              width: 35vw;
+              margin: 5vh 3vw 0;
+              height: 60vh;
+              font-size: 2vh;
+              font-weight: 40000;
+              line-height: 4vh;
+            ">
+					Curso de Personal Trainer para formarse como un verdadero
+					profesional. El entrenamiento personalizado es una actividad que
+					comprende la evaluación, el seguimiento y control de la actividad
+					física de una persona o un grupo de personas y la posibilidad de
+					desarrollar e implementar un programa de entrenamiento efectivo.
+				</div>
+				<div style="align-self: center">
+					<img src="/img/logo.png" style="width: 25vw" />
+				</div>
+			</aside>
+
+			<aside class="derecho">
+				<div style="padding-top: 15vh">
+					<img src="/img/icon2.svg" alt="" />
+					<a href="">Home</a>
+				</div>
+				<div>
+					<img src="/img/icon3.svg" alt="" />
+					<a th:href="@{/user/credits}">Créditos</a>
+				</div>
+				<div>
+					<img src="/img/icon1.svg" alt="" />
+					<a th:href="@{/user/calendar}">Calendario</a>
+				</div>
+				<div>
+					<img src="/img/icon6.svg" alt="" />
+					<a th:href="@{/user/myReservations}">Mis Reservas</a>
+				</div>
+				<div style="padding-top: 20%">
+					<img src="/img/icon5.svg" alt="" />
+					<a th:href="@{/user/modification}">Ajustes</a>
+				</div>
+				<div>
+					<img src="/img/icon4.svg" alt="" />
+					<a href="/logout">Salir</a>
+				</div>
+			</aside>
+		</div>
+	</div>
+</body>
+
+</html>

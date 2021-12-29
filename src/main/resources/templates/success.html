@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/css/messages.css" />
+	<title>Operación existosa</title>
+</head>
+
+<body>
+	<div class="background">
+		<img src="/img/messages/mensaje-correcto.png" class="mensaje">
+		<div style="position: absolute; display: flex; flex-flow: column nowrap; margin-top: 10vh;">
+			<p class="ptext">Tu operación ha sido exitosa. <br> Gracias!</p>
+			<form action="/" method="GET" th:if="${session.uSession == null}">
+				<button type="submit">Aceptar</button>
+			</form>
+
+			<form action="/user/home" method="GET" th:if="${session.uSession != null}">
+				<button type="submit">Aceptar</button>
+			</form>
+		</div>
+		</img>
+	</div>
+</body>
+
+</html>
