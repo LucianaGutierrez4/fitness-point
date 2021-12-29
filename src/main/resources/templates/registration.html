@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Videojuegos & Desarrollo">
+	<meta name="description" content="Muestra de un formulario de acceso en HTML y CSS">
+	<meta name="keywords" content="Formulario Acceso, Formulario de LogIn">
+	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Overpass&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/css/signup.css">
+	<title> Formulario de Acceso </title>
+</head>
+
+<body>
+
+	<img class="frame" src="/img/frame.png">
+	<p class="signup">Sign up</p>
+
+	<form action="/register" method="POST">
+
+		<input class="name" type="text" placeholder="Name" name="name">
+		<input class="surname" type="text" placeholder="Surname" name="surname">
+		<input class="email" type="text" placeholder="E-mail" name="email">
+		<input class="password" type="password" placeholder="Password" name="pass1">
+		<input class="repeat" type="password" placeholder="Repeat your password" name="pass2">
+
+		<button type="submit" class="register"><img class="registerimg" src="/img/accept.png"></button>
+		
+		<p class="error" th:text="${error}"></p>
+
+	</form>
+
+	
+
+</body>
+
+</html>

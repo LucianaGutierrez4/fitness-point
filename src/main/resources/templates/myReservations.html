@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/css/myReservations.css" />
+	<title>Reservas</title>
+</head>
+
+<body>
+	<div id="imgFondo">
+		<header>
+			<img src="/img/logo.png" class="imgHeader" />
+			<div>Créditos disponibles</div>
+			<div class="creditos">
+				<p th:text="${session.credits[0]}"></p>
+			</div>
+			<div>Créditos usados</div>
+			<div class="creditos">
+				<p th:text="${session.credits[1]}"></p>
+			</div>
+			<div>
+				<p th:text="${session.uSession.email}" class="username"></p>
+			</div>
+		</header>
+
+		<div class="container">
+			<aside class="izquierdo">
+				<div id="scroll">
+					<div th:each="r,index : ${reservations}">
+
+						<div class="gridContainer">
+							<div>
+								<div class="turno" th:text="${r[0] + ', ' + r[1]}"></div>
+								<div th:text="${'De ' + r[2] + 'hs a ' + r[3] + 'hs'}"></div>
+							</div>
+							<form action="/user/cancel" method="GET">
+								
+								<input type="hidden" th:value="${r[4]}" name="reservId" />
+								<button type="submit">Cancelar</button>
+								
+							</form>
+						</div>
+
+						<hr class="linea1" />
+
+
+					</div>
+				</div>
+			</aside>
+
+			<aside class="derecho">
+				<div style="padding-top: 15vh">
+					<img src="/img/icon2.svg" alt="" />
+					<a th:href="@{/user/home}">Home</a>
+				</div>
+				<div>
+					<img src="/img/icon3.svg" alt="" />
+					<a th:href="@{/user/credits}">Créditos</a>
+				</div>
+				<div>
+					<img src="/img/icon1.svg" alt="" />
+					<a th:href="@{/user/calendar}">Calendario</a>
+				</div>
+				<div>
+					<img src="/img/icon6.svg" alt="" />
+					<a href="@{/user/myReservations}">Mis Reservas</a>
+				</div>
+				<div style="padding-top: 20%">
+					<img src="/img/icon5.svg" alt="" />
+					<a th:href="@{/user/modification}">Ajustes</a>
+				</div>
+				<div>
+					<img src="/img/icon4.svg" alt="" />
+					<a href="/logout">Salir</a>
+				</div>
+			</aside>
+		</div>
+	</div>
+</body>
+
+</html>

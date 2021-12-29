@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/css/settings.css" />
+	<title>Ajustes</title>
+</head>
+
+<body>
+	<div id="imgFondo">
+		<header>
+			<img src="/img/logo.png" class="imgHeader" />
+			<div>Créditos disponibles</div>
+			<div class="creditos">
+				<p th:text="${session.credits[0]}"></p>
+			</div>
+			<div>Créditos usados</div>
+			<div class="creditos">
+				<p th:text="${session.credits[1]}"></p>
+			</div>
+			<div>
+				<p th:text="${session.uSession.email}" class="username"></p>
+			</div>
+		</header>
+
+		<div class="container">
+			<aside class="izquierdo">
+				<img src="/img/frame.png" style="
+              position: absolute;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0;
+              padding: 0;
+              width: 30%;
+              height: 60%;
+              min-width: 400px;
+            " alt="" />
+				<p class="texto">Introduzca una nueva contraseña</p>
+				<form action="/user/modify" method="POST" class="form">
+					<input class="password" type="password" placeholder="Current password" name="pass1" />
+					<input class="password" type="password" placeholder="New password" name="pass2" />
+					<input class="rpassword" type="password" placeholder="Repeat password" name="pass3" />
+					<button class="button" type="submit">Aceptar</button>
+				</form>
+
+				<p th:text="${error}" class="error"></p>
+
+			</aside>
+
+			<aside class="derecho">
+				<div style="padding-top: 15vh">
+					<img src="/img/icon2.svg" alt="" />
+					<a th:href="@{/user/home}">Home</a>
+				</div>
+				<div>
+					<img src="/img/icon3.svg" alt="" />
+					<a th:href="@{/user/credits}">Créditos</a>
+				</div>
+				<div>
+					<img src="/img/icon1.svg" alt="" />
+					<a th:href="@{/user/calendar}">Calendario</a>
+				</div>
+				<div>
+					<img src="/img/icon6.svg" alt="" />
+					<a th:href="@{/user/myReservations}">Mis Reservas</a>
+				</div>
+				<div style="padding-top: 20%">
+					<img src="/img/icon5.svg" alt="" />
+					<a th:href="@{/user/modification}">Ajustes</a>
+				</div>
+				<div>
+					<img src="/img/icon4.svg" alt="" />
+					<a href="/logout">Salir</a>
+				</div>
+			</aside>
+		</div>
+	</div>
+</body>
+
+</html>

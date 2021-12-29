@@ -1,0 +1,117 @@
+* {
+	background: url(/img/background.jpg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/*body {
+	max-width: 1080px;
+}*/
+
+.frame{
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	width: 30%;
+	height: 60%;
+	left:35%;
+	top: 10%;
+}
+
+.singin{
+	position: absolute;
+	left: 35.9%;
+	right: 35.74%;
+	top: 12%;
+	bottom: 86.95%;
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 120%;
+	text-align: center;
+	color: #FFFFFF;
+}
+
+
+.texto{
+	position: absolute;
+	left: 35.9%;
+	right: 35.74%;
+	top: 18%;
+	bottom: 86.95%;
+	font-family: Montserrat;
+	font-style: italic;
+	font-weight:normal;
+	font-size: 108%;
+	text-align: center;
+	color: #FFFFFF;  
+}
+
+.email{
+	position: absolute;
+	left:  43%;
+	right: 35%;
+	top: 33%;
+	bottom: 100%;
+	width: 15%;
+	height: 5%;
+	border: 4px solid #ffffff;
+	box-sizing: border-box;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	border-radius: 40px;
+	color: #ffffff;
+	background: rgba(0,0,0,0);
+}
+
+.password{
+	position: absolute;
+	left:  43%;
+	right: 35%;
+	top: 40%;
+	bottom: 100%;
+	width: 15%;
+	height: 5%;
+	border: 4px solid #ffffff;
+	box-sizing: border-box;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	border-radius: 40px;
+	color: #ffffff;
+	background: rgba(0,0,0,0);
+}
+
+
+
+.login{
+	position: absolute;
+	left:  45%;
+	right: 35%;
+	top: 55%;
+	bottom: 100%;
+	width: 9.6%;
+	height: 5.5%;
+	background: none;
+	border: none;
+}
+  
+.loginimg {
+	background: rgba(0,0,0,0);
+}
+
+.error {
+	display: block;
+    font-family: Montserrat;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 120%;
+    text-align: center;
+    color: rgb(222, 201, 54);
+    margin-top: 37%;
+    margin-left: 42%;
+    z-index: 5;
+    position: absolute;
+}

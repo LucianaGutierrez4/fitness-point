@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="/css/reservation.css" />
+	<title>Confirmar reserva</title>
+</head>
+
+<body>
+	<div id="imgFondo">
+		<header>
+			<img src="/img/logo.png" class="imgHeader" />
+			<div>Créditos disponibles</div>
+			<div class="creditos">
+				<p th:text="${session.credits[0]}"></p>
+			</div>
+			<div>Créditos usados</div>
+			<div class="creditos">
+				<p th:text="${session.credits[1]}"></p>
+			</div>
+			<div>
+				<p th:text="${session.uSession.email}" class="username"></p>
+			</div>
+		</header>
+
+		<div class="container">
+			<aside class="izquierdo">
+				<p class="dia" th:text="${day[0][0]}"></p>
+
+				<div th:if="${day[0][4] != null}">
+
+					<div th:each="time,index : ${day}">
+
+						<div th:if="${time[3] == '0'}">
+
+							<div class="gridContainer">
+								<div>
+									<p class="turno" th:text="${'Turno ' + index.count}"></p>
+									<p th:text="${'De ' + time[1] + 'hs a ' + time[2] + 'hs'}"></p>
+								</div>
+								<form style="text-align: end">
+									<div style="display: flex">
+										<p>Lugares disponibles:</p>
+										<p class="circulitoRojo" th:text="${time[3]}"></p>
+									</div>
+
+								</form>
+							</div>
+							<hr class="linea1" />
+
+						</div>
+						<div th:unless="${time[3] == '0'}">
+
+							<div class="gridContainer">
+								<div>
+									<p class="turno" th:text="${'Turno ' + index.count}"></p>
+									<p th:text="${'De ' + time[1] + 'hs a ' + time[2] + 'hs'}"></p>
+								</div>
+
+								<form method="GET" action="/user/reservation2" style="text-align: end">
+									<div style="display: flex">
+										<p>Lugares disponibles:</p>
+										<p class="circulito" th:text="${time[3]}"></p>
+									</div>
+
+									<input type="hidden" th:value="${index.count}" name="sTime" />
+									<input type="hidden" th:value="${time[4]}" name="dayId" />
+									<input type="hidden" th:value="${session.credits[0]}" name="uCredits" />
+
+									<button type="submit">Seleccionar</button>
+								</form>
+
+							</div>
+							<hr class="linea1" />
+
+						</div>
+					</div>
+
+				</div>
+				<div th:unless="${day[0][4] != null}">
+				
+					<p class="dia">No hay turnos para esta hora.</p>
+				
+				</div>
+
+
+			</aside>
+
+			<aside class="derecho">
+				<div style="padding-top: 15vh">
+					<img src="/img/icon2.svg" alt="" />
+					<a th:href="@{/user/home}">Home</a>
+				</div>
+				<div>
+					<img src="/img/icon3.svg" alt="" />
+					<a th:href="@{/user/credits}">Créditos</a>
+				</div>
+				<div>
+					<img src="/img/icon1.svg" alt="" />
+					<a th:href="@{/user/calendar}">Calendario</a>
+				</div>
+				<div>
+					<img src="/img/icon6.svg" alt="" />
+					<a th:href="@{/user/myReservations}">Mis Reservas</a>
+				</div>
+				<div style="padding-top: 20%">
+					<img src="/img/icon5.svg" alt="" />
+					<a th:href="@{/user/modification}">Ajustes</a>
+				</div>
+				<div>
+					<img src="/img/icon4.svg" alt="" />
+					<a href="/logout">Salir</a>
+				</div>
+			</aside>
+		</div>
+	</div>
+</body>
+
+</html>
